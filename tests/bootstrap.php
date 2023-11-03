@@ -2,12 +2,25 @@
 declare(strict_types=1);
 
 /**
- * Test suite bootstrap for BEdita/I18n/Deepl.
+ * BEdita, API-first content management framework
+ * Copyright 2023 Atlas Srl, Chialab Srl
+ *
+ * This file is part of BEdita: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * See LICENSE.LGPL or <http://gnu.org/licenses/lgpl-3.0.html> for more details.
+ */
+
+/**
+ * Test suite bootstrap for BEdita I18n Deepl.
  *
  * This function is used to find the location of CakePHP whether CakePHP
  * has been installed as a dependency of the plugin, or the plugin is itself
  * installed as a dependency of an application.
  */
+
 $findRoot = function ($root) {
     do {
         $lastRoot = $root;
@@ -24,32 +37,5 @@ unset($findRoot);
 
 chdir($root);
 
-require_once $root . '/vendor/autoload.php';
-
-/**
- * Define fallback values for required constants and configuration.
- * To customize constants and configuration remove this require
- * and define the data required by your plugin here.
- */
-require_once $root . '/vendor/cakephp/cakephp/tests/bootstrap.php';
-
-if (file_exists($root . '/config/bootstrap.php')) {
-    require $root . '/config/bootstrap.php';
-
-    return;
-}
-
-/**
- * Load schema from a SQL dump file.
- *
- * If your plugin does not use database fixtures you can
- * safely delete this.
- *
- * If you want to support multiple databases, consider
- * using migrations to provide schema for your plugin,
- * and using \Migrations\TestSuite\Migrator to load schema.
- */
-use Cake\TestSuite\Fixture\SchemaLoader;
-
-// Load a schema dump file.
-(new SchemaLoader())->loadSqlFiles('tests/schema.sql', 'test');
+require_once 'vendor/cakephp/cakephp/src/basics.php';
+require_once 'vendor/autoload.php';
