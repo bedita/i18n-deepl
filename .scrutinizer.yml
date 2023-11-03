@@ -3,7 +3,6 @@ checks:
 filter:
   paths:
     - 'src/*'
-    - 'tests/*'
   dependency_paths:
     - 'vendor/*'
 
