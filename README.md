@@ -4,7 +4,6 @@
 [![codecov](https://codecov.io/gh/bedita/i18n-deepl/branch/main/graph/badge.svg)](https://codecov.io/gh/bedita/i18n-deepl)
 [![phpstan](https://img.shields.io/badge/PHPStan-level%209-brightgreen.svg)](https://phpstan.org)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bedita/i18n-deepl/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/bedita/i18n-deepl/?branch=main)
-[![Build Status](https://scrutinizer-ci.com/g/bedita/i18n-deepl/badges/build.png?b=main)](https://scrutinizer-ci.com/g/bedita/i18n-deepl/build-status/main)
 [![image](https://img.shields.io/packagist/v/bedita/i18n-deepl.svg?label=stable)](https://packagist.org/packages/bedita/i18n-deepl)
 [![image](https://img.shields.io/github/license/bedita/i18n-deepl.svg)](https://github.com/bedita/i18n-deepl/blob/main/LICENSE.LGPL)
 
