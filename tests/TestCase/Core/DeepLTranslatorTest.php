@@ -56,19 +56,22 @@ class DeepLTranslatorTest extends TestCase
             {
                 $this->deeplClient = new class ('fake-auth-key', 2) extends DeepL
                 {
+                    /**
+                     * @inheritDoc
+                     */
                     public function translate(
                         $text,
                         $sourceLang = '',
                         $targetLang = 'en',
                         $tagHandling = null,
-                        array $ignoreTags = null,
+                        ?array $ignoreTags = null,
                         $formality = 'default',
                         $splitSentences = null,
                         $preserveFormatting = null,
-                        array $nonSplittingTags = null,
+                        ?array $nonSplittingTags = null,
                         $outlineDetection = null,
-                        array $splittingTags = null,
-                        string $glossaryId = null
+                        ?array $splittingTags = null,
+                        ?string $glossaryId = null
                     ): array {
                         return [
                             ['text' => 'translation of ' . json_encode($text) . ' from ' . $sourceLang . ' to ' . $targetLang],
