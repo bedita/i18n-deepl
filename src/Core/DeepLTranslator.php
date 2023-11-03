@@ -21,6 +21,13 @@ use Cake\Utility\Hash;
 class DeepLTranslator implements TranslatorInterface
 {
     /**
+     * The DeepL API client.
+     *
+     * @var \BabyMarkt\DeepL\DeepL
+     */
+    protected DeepL $deeplClient;
+
+    /**
      * The engine options.
      *
      * @var array
@@ -36,6 +43,8 @@ class DeepLTranslator implements TranslatorInterface
     public function setup(array $options = []): void
     {
         $this->options = $options;
+        $authKey = $this->options['auth_key'] ?? '';
+        $this->deeplClient = new DeepL($authKey, 2);
     }
 
     /**
@@ -57,15 +66,8 @@ class DeepLTranslator implements TranslatorInterface
      */
     public function translate(array $texts, string $from, string $to, array $options = []): string
     {
-        $authKey = $this->options['auth_key'] ?? '';
-        $deepl = new DeepL($authKey, 2);
-        $translation = $deepl->translate($texts, $from, $to);
-        if (empty($translation)) {
-            return (string)json_encode(['translation' => []]);
-        }
-        if (is_array($translation)) {
-            $translation = (array)Hash::extract($translation, '{n}.text');
-        }
+        $translation = $this->deeplClient->translate($texts, $from, $to);
+        $translation = empty($translation) ? [] : (array)Hash::extract($translation, '{n}.text');
 
         return (string)json_encode(compact('translation'));
     }
