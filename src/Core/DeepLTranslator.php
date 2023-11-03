@@ -8,8 +8,9 @@ use BEdita\I18n\Core\TranslatorInterface;
 use Cake\Utility\Hash;
 
 /**
- * DeepL translator engine.
- * This engine uses the DeepL API to translate texts.
+ * DeepL translator class that uses DeepL.
+ *
+ * This class uses the DeepL API to translate texts.
  * Pass a valid 'auth_key' to the options array to use this engine.
  * Example:
  * ```
