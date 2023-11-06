@@ -9,7 +9,7 @@
 
 ## Installation
 
-You can install this plugin into your CakePHP application using [composer](https://getcomposer.org).
+You can install this plugin into your application using [composer](https://getcomposer.org).
 
 The recommended way to install composer packages is:
 
@@ -17,7 +17,7 @@ The recommended way to install composer packages is:
 composer require bedita/i18n-deepl
 ```
 
-Note: php version supported is >= 7.4 and <= 8.2.
+Note: php version supported is >= 7.4 and < 8.3.
 
 ## DeepL Translator
 
