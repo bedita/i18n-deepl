@@ -1,4 +1,4 @@
-# BEdita I18n Deepl plugin for CakePHP
+# BEdita I18n Deepl plugin
 
 [![Github Actions](https://github.com/bedita/i18n-deepl/workflows/php/badge.svg)](https://github.com/bedita/i18n-deepl/actions?query=workflow%3Aphp)
 [![codecov](https://codecov.io/gh/bedita/i18n-deepl/branch/main/graph/badge.svg)](https://codecov.io/gh/bedita/i18n-deepl)
