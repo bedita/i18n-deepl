@@ -14,9 +14,9 @@ declare(strict_types=1);
  */
 namespace BEdita\I18n\Deepl\Test\Core;
 
-use BabyMarkt\DeepL\DeepL;
 use BEdita\I18n\Deepl\Core\DeepLTranslator;
 use Cake\TestSuite\TestCase;
+use DeepL\Translator;
 
 /**
  * {@see \BEdita\I18n\Deepl\Core\DeepLTranslator} Test Case
@@ -34,7 +34,7 @@ class DeepLTranslatorTest extends TestCase
     public function testSetup(): void
     {
         $translator = new class extends DeepLTranslator {
-            public function getDeepLClient(): DeepL
+            public function getDeepLClient(): Translator
             {
                 return $this->deeplClient;
             }
@@ -54,27 +54,19 @@ class DeepLTranslatorTest extends TestCase
         $translator = new class extends DeepLTranslator {
             public function setup(array $options = []): void
             {
-                $this->deeplClient = new class ('fake-auth-key', 2) extends DeepL
+                $this->deeplClient = new class ('fake-auth-key', 2) extends Translator
                 {
                     /**
                      * @inheritDoc
                      */
-                    public function translate(
-                        $text,
-                        $sourceLang = '',
-                        $targetLang = 'en',
-                        $tagHandling = null,
-                        ?array $ignoreTags = null,
-                        $formality = 'default',
-                        $splitSentences = null,
-                        $preserveFormatting = null,
-                        ?array $nonSplittingTags = null,
-                        $outlineDetection = null,
-                        ?array $splittingTags = null,
-                        ?string $glossaryId = null
-                    ): array {
+                    public function translateText($texts, ?string $sourceLang, string $targetLang, array $options = [])
+                    {
                         return [
-                            ['text' => 'translation of ' . json_encode($text) . ' from ' . $sourceLang . ' to ' . $targetLang],
+                            'translations' => [
+                                [
+                                    'text' => 'translation of ' . json_encode($texts) . ' from ' . $sourceLang . ' to ' . $targetLang,
+                                ],
+                            ],
                         ];
                     }
                 };

@@ -14,9 +14,9 @@ declare(strict_types=1);
  */
 namespace BEdita\I18n\Deepl\Core;
 
-use BabyMarkt\DeepL\DeepL;
 use BEdita\I18n\Core\TranslatorInterface;
 use Cake\Utility\Hash;
+use DeepL\Translator;
 
 /**
  * DeepL translator class that uses DeepL.
@@ -35,9 +35,9 @@ class DeepLTranslator implements TranslatorInterface
     /**
      * The DeepL API client.
      *
-     * @var \BabyMarkt\DeepL\DeepL
+     * @var \DeepL\Translator
      */
-    protected DeepL $deeplClient;
+    protected Translator $deeplClient;
 
     /**
      * The engine options.
@@ -56,9 +56,7 @@ class DeepLTranslator implements TranslatorInterface
     {
         $this->options = $options;
         $authKey = $this->options['auth_key'] ?? '';
-        $version = $this->options['version'] ?? 2;
-        $endpoint = $this->options['endpoint'] ?? 'api.deepl.com';
-        $this->deeplClient = new DeepL($authKey, $version, $endpoint);
+        $this->deeplClient = new Translator($authKey);
     }
 
     /**
@@ -80,7 +78,7 @@ class DeepLTranslator implements TranslatorInterface
      */
     public function translate(array $texts, string $from, string $to, array $options = []): string
     {
-        $translation = $this->deeplClient->translate($texts, $from, $to);
+        $translation = $this->deeplClient->translateText($texts, $from, $to);
         $translation = empty($translation) ? [] : (array)Hash::extract($translation, '{n}.text');
 
         return (string)json_encode(compact('translation'));

@@ -21,7 +21,7 @@ Note: php version supported is >= 7.4 and <= 8.1: DeepL API supports php >= 7.3 
 
 ## DeepL Translator
 
-This plugin uses [DeepL Translator](https://www.deepl.com/translator) to translate texts, via [deepl-php-lib](https://github.com/Baby-Markt/deepl-php-lib).
+This plugin uses [DeepL Translator](https://www.deepl.com/translator) to translate texts, via [deepl-php](https://github.com/DeepLcom/deepl-php).
 
 Usage example:
 ```php
