@@ -16,28 +16,30 @@ namespace BEdita\I18n\Deepl\Core;
 
 use BEdita\I18n\Core\TranslatorInterface;
 use Cake\Utility\Hash;
-use DeepL\Translator;
+use DeepL\Translator as DeeplTranslator;
 
 /**
- * DeepL translator class that uses DeepL.
+ * Translator class that uses DeepL.
  *
  * This class uses the DeepL API to translate texts.
  * Pass a valid 'auth_key' to the options array to use this engine.
  * Example:
  * ```
- * $translator = new DeepLTranslator();
+ * use BEdita\I18n\Deepl\Core\Translator;
+ * [...]
+ * $translator = new Translator();
  * $translator->setup(['auth_key' => 'your-auth-key']);
  * $translation = $translator->translate(['Hello world!'], 'en', 'it');
  * ```
  */
-class DeepLTranslator implements TranslatorInterface
+class Translator implements TranslatorInterface
 {
     /**
      * The DeepL API client.
      *
      * @var \DeepL\Translator
      */
-    protected Translator $deeplClient;
+    protected DeeplTranslator $deeplClient;
 
     /**
      * The engine options.
@@ -56,7 +58,7 @@ class DeepLTranslator implements TranslatorInterface
     {
         $this->options = $options;
         $authKey = $this->options['auth_key'] ?? '';
-        $this->deeplClient = new Translator($authKey);
+        $this->deeplClient = new DeeplTranslator($authKey);
     }
 
     /**
