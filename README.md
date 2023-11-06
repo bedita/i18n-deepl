@@ -25,9 +25,9 @@ This plugin uses [DeepL Translator](https://www.deepl.com/translator) to transla
 
 Usage example:
 ```php
-use BEdita\I18n\Translator\DeepLTranslator;
+use BEdita\I18n\Deepl\Core\Translator;
 
-$translator = new DeepLTranslator();
+$translator = new Translator();
 $translator->setup(['auth_key' => 'your-auth-key']);
 $translation = $translator->translate(['Hello world!'], 'en', 'it');
 ```
