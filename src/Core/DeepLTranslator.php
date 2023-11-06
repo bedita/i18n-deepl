@@ -56,7 +56,9 @@ class DeepLTranslator implements TranslatorInterface
     {
         $this->options = $options;
         $authKey = $this->options['auth_key'] ?? '';
-        $this->deeplClient = new DeepL($authKey, 2);
+        $version = $this->options['version'] ?? 2;
+        $endpoint = $this->options['endpoint'] ?? 'api.deepl.com';
+        $this->deeplClient = new DeepL($authKey, $version, $endpoint);
     }
 
     /**
