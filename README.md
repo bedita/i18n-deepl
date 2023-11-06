@@ -17,7 +17,7 @@ The recommended way to install composer packages is:
 composer require bedita/i18n-deepl
 ```
 
-Note: php version supported is >= 7.4 and <= 8.1: DeepL API supports php >= 7.3 and <= 8.1.
+Note: php version supported is >= 7.4 and <= 8.2.
 
 ## DeepL Translator
 

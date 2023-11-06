@@ -3,7 +3,7 @@
     "description": "BEdita I18n Deepl plugin supporting PHP >= 7.3 && PHP <= 8.1",
     "license": "MIT",
     "require": {
-        "php": ">=7.4 <8.2",
+        "php": ">=7.4 <=8.2",
         "bedita/i18n": "^4.4.3",
         "cakephp/utility": "^4.4",
         "deeplcom/deepl-php": "^1.6",
