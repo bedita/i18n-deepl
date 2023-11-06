@@ -16,6 +16,7 @@ namespace BEdita\I18n\Deepl\Test\Core;
 
 use BEdita\I18n\Deepl\Core\DeepLTranslator;
 use Cake\TestSuite\TestCase;
+use DeepL\TextResult;
 use DeepL\Translator;
 
 /**
@@ -54,20 +55,17 @@ class DeepLTranslatorTest extends TestCase
         $translator = new class extends DeepLTranslator {
             public function setup(array $options = []): void
             {
-                $this->deeplClient = new class ('fake-auth-key', 2) extends Translator
+                $this->deeplClient = new class ('fake-auth-key') extends Translator
                 {
                     /**
                      * @inheritDoc
                      */
                     public function translateText($texts, ?string $sourceLang, string $targetLang, array $options = [])
                     {
-                        return [
-                            'translations' => [
-                                [
-                                    'text' => 'translation of ' . json_encode($texts) . ' from ' . $sourceLang . ' to ' . $targetLang,
-                                ],
-                            ],
-                        ];
+                        return [new TextResult(
+                            'translation of ' . json_encode($texts) . ' from ' . $sourceLang . ' to ' . $targetLang,
+                            'en'
+                        )];
                     }
                 };
             }
