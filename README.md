@@ -29,5 +29,6 @@ use BEdita\I18n\Deepl\Core\Translator;
 
 $translator = new Translator();
 $translator->setup(['auth_key' => 'your-auth-key']);
-$translation = $translator->translate(['Hello world!'], 'en', 'it');
+$result = $translator->translate(['Hello world!'], 'en', 'it');
+// $result is an array, i.e ['translation' => ['Ciao mondo!']]
 ```
