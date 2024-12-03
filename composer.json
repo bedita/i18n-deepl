@@ -1,19 +1,19 @@
 {
     "name": "bedita/i18n-deepl",
-    "description": "BEdita I18n Deepl plugin supporting PHP >= 7.4",
+    "description": "BEdita I18n Deepl plugin supporting PHP >= 8.1",
     "license": "MIT",
     "require": {
-        "php": ">=7.4",
-        "bedita/i18n": "^4.4.3",
-        "cakephp/utility": "^4.4",
-        "deeplcom/deepl-php": "^1.6",
+        "php": ">=8.1",
+        "bedita/i18n": "^5.0.0",
+        "cakephp/utility": "^4.5",
+        "deeplcom/deepl-php": "1.6.0",
         "symfony/http-client": "^5.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.3",
+        "phpunit/phpunit": "^9.6",
         "phpstan/phpstan": "^1.10",
         "cakephp/cakephp-codesniffer": "~4.7.0",
-        "cakephp/cakephp": "^4.4"
+        "cakephp/cakephp": "^4.5"
     },
     "autoload": {
         "psr-4": {
