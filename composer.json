@@ -1,10 +1,10 @@
 {
     "name": "bedita/i18n-deepl",
-    "description": "BEdita I18n Deepl plugin supporting PHP >= 8.1",
+    "description": "BEdita I18n Deepl plugin supporting PHP >= 8.3",
     "license": "MIT",
     "require": {
-        "php": ">=8.1",
-        "bedita/i18n": "^5.0.0",
+        "php": ">=8.3",
+        "bedita/i18n": "^5.1.0",
         "cakephp/utility": "^4.5",
         "deeplcom/deepl-php": "1.6.0",
         "symfony/http-client": "^5.4"
