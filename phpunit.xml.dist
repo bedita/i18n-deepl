@@ -27,5 +27,5 @@
     <!-- Setup fixture extension -->
     <extensions>
         <bootstrap class="\Cake\TestSuite\Fixture\Extension\PHPUnitExtension"/>
-    </extensions>ì
+    </extensions>
 </phpunit>
