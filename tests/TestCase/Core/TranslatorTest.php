@@ -18,19 +18,21 @@ use BEdita\I18n\Deepl\Core\Translator;
 use Cake\TestSuite\TestCase;
 use DeepL\TextResult;
 use DeepL\Translator as DeeplTranslator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversMethod;
 
 /**
  * {@see \BEdita\I18n\Deepl\Core\Translator} Test Case
- *
- * @covers \BEdita\I18n\Deepl\Core\Translator
  */
+#[CoversClass(Translator::class)]
+#[CoversMethod(Translator::class, 'setup')]
+#[CoversMethod(Translator::class, 'translate')]
 class TranslatorTest extends TestCase
 {
     /**
      * Test setup.
      *
      * @return void
-     * @covers ::setup()
      */
     public function testSetup(): void
     {
@@ -48,7 +50,6 @@ class TranslatorTest extends TestCase
      * Test translate.
      *
      * @return void
-     * @covers ::translate()
      */
     public function testTranslate(): void
     {
