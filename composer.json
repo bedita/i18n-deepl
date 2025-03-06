@@ -6,7 +6,7 @@
         "php": ">=8.3",
         "bedita/i18n": "^6.0.0",
         "cakephp/utility": "^5.0",
-        "deeplcom/deepl-php": "1.6.0",
+        "deeplcom/deepl-php": "1.11.1",
         "symfony/http-client": "^5.4"
     },
     "require-dev": {
