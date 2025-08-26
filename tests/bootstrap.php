@@ -21,6 +21,8 @@ declare(strict_types=1);
  * installed as a dependency of an application.
  */
 
+require dirname(__DIR__) . '/vendor/autoload.php';
+
 $findRoot = function ($root) {
     do {
         $lastRoot = $root;
@@ -37,5 +39,10 @@ unset($findRoot);
 
 chdir($root);
 
-require_once 'vendor/cakephp/cakephp/src/basics.php';
-require_once 'vendor/autoload.php';
+define('ROOT', dirname(__DIR__));
+define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'vendor' . DS . 'cakephp' . DS . 'cakephp');
+define('CORE_PATH', CAKE_CORE_INCLUDE_PATH . DS);
+define('CAKE', CORE_PATH . 'src' . DS);
+
+require CORE_PATH . 'config' . DS . 'bootstrap.php';
+require CAKE . 'functions.php';
