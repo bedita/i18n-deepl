@@ -66,7 +66,7 @@ class TranslatorTest extends TestCase
                         return [new TextResult(
                             'translation of ' . json_encode($texts) . ' from ' . $sourceLang . ' to ' . $targetLang,
                             'en',
-                            0
+                            0,
                         )];
                     }
                 };
